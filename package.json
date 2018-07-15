@@ -1,0 +1,26 @@
+{
+  "name": "bakadux",
+  "version": "1.0.0",
+  "description": "A dispatcher setup simular to Flux or Redux for React",
+  "main": "dispatcher.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bob620/bakadux.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Bob620",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Bob620/bakadux/issues"
+  },
+  "homepage": "https://github.com/Bob620/bakadux#readme",
+  "dependencies": {
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  }
+}
