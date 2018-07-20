@@ -2,10 +2,10 @@
   "name": "bakadux",
   "version": "1.0.0",
   "description": "A dispatcher setup simular to Flux or Redux for React",
-  "main": "dispatcher.jsx",
+  "main": "dispatcher.js",
   "scripts": {
     "start": "webpack-serve",
-    "build": "webpack",
+    "build": "webpack --config webpack.build.js",
     "preinstall": "npm prune",
     "postinstall": ""
   },
