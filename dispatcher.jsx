@@ -37,6 +37,7 @@ class Dispatcher {
 
 		// Could most likely get cleaned up
 		this.data = {
+			onLandFunc: () => {},
 			stores: new Map(),
 			storeModify: {},
 			actionCalls: {},
@@ -83,6 +84,8 @@ class Dispatcher {
 	render(UserClass) {
 		const that = this;
 
+		this.data.onLandFunc();
+
 		// Creates a class that the dispatcher can actually set the state and update it and whatnot
 		class MainClass extends Component {
 			constructor() {
@@ -112,7 +115,27 @@ class Dispatcher {
 	 */
 	setOnHistoryNavigate(func) {
 		this.history.data.onStatePop = func;
-		this.history.data.onStatePopFunc(history.state);
+	}
+
+	setOriginState(state) {
+		this.history.data.originState = state;
+	}
+
+	setOnLand(func) {
+		this.data.onLandFunc = () => {
+			func.call(undefined, {
+				stores: this.data.storeModify,
+				actions: this.data.actionCalls,
+				history: this.history,
+				path: document.location.pathname !== '/' ? document.location.pathname : '',
+				redirectOrigin: (state) => {
+					this.setOriginState(state);
+					this.history.replaceState(state, '');
+				}
+			});
+
+			this.updateStores();
+		}
 	}
 
 	/**
@@ -144,11 +167,12 @@ class Dispatcher {
 	 * Rerenders the react dom if one of the stores' data updates
 	 */
 	onStoreUpdate() {
-		this.data.renderClass(({key}) => {
-			return {
-				key: key++
-			};
-		});
+		if (this.data.renderClass)
+			this.data.renderClass(({key}) => {
+				return {
+					key: key++
+				};
+			});
 	}
 }
 

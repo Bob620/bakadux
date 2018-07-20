@@ -2,13 +2,20 @@ module.exports = class History {
 	constructor(dispatcher) {
 		this.data = {
 			dispatcher,
+			originState: {},
 			onStatePop: undefined,
-			onStatePopFunc: state => {
-				if (this.data.onStatePop) return this.data.onStatePop(state);
+			onStatePopFunc: histEvent => {
+				if (this.data.onStatePop) {
+					this.data.onStatePop.call(undefined, {
+						stores: dispatcher.data.storeModify,
+						actions: dispatcher.data.actionCalls,
+						history: this
+					}, histEvent && histEvent.state ? histEvent.state : this.data.originState);
 
-				return () => {
+					dispatcher.updateStores();
+				} else {
 					console.warn('No state pop handler!');
-				};
+				}
 			}
 		};
 
@@ -17,12 +24,12 @@ module.exports = class History {
 
 	// For Consistency and future expansion, implement the builtin history functions
 
-	pushState(state) {
-		history.pushState(state);
+	pushState(state, url) {
+		history.pushState(state, '', url);
 	}
 
-	replaceState(state) {
-		history.replaceState(state);
+	replaceState(state, url) {
+		history.replaceState(state, '', url);
 	}
 
 	forward() {
