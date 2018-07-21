@@ -14,7 +14,7 @@ class Dispatcher {
 	constructor() {
 		const that = this;
 		// Needs to give the store the dispatcher, and classes can't use .bind()
-		this.Store = class extends Store {constructor(...values) {super(that, ...values);}};
+		this.Store = class extends Store {constructor(...values) {super(that, ...values)}};
 		this.history = new History(this);
 
 		// Easier to handle then action classes, and allows me to return an object of action calls to the user so you
