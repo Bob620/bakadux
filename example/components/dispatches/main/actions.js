@@ -1,4 +1,4 @@
-import { CreateActions } from '../../../../dispatcher.jsx';
+import { CreateActions } from '../../../../dispatcher.js';
 
 module.exports = CreateActions([
 	{

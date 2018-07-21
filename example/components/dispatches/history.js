@@ -1,4 +1,4 @@
-import dispatcher from '../../../dispatcher.jsx';
+import dispatcher from '../../../dispatcher.js';
 
 dispatcher.setOnLand(({stores, path, redirectOrigin}) => {
 	let page = 'landing';
