@@ -1,6 +1,6 @@
 {
   "name": "bakadux",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A dispatcher setup simular to Flux or Redux for React",
   "main": "dispatcher.js",
   "scripts": {
