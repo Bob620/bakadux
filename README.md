@@ -101,6 +101,8 @@ dispatcher.setOnHistoryNavigate(({stores}, state) => {
 
 Now, if we want to use the actions or stores in react, we can do it several ways. creating a new Store returns a store object that can be accessed directory to get the current state. The CreateActions function returns an object of the actions we made linked to the actionType we gave them.
 
+Optionally, to set the element id that react will render over (default id is `App`), you can pass a string into the `dispatcher.render` function.
+
 ```javascript
 // index.jsx
 import React, { Component } from 'react';
@@ -128,7 +130,7 @@ class Page extends Component {
 }
 
 // Renders the react to the page and allows the dispatcher to update the state
-dispatcher.render(Page);
+dispatcher.render(Page, 'App');
 ```
 
 * Stores are specific contexts that manage themselves, as where actions are context-less and are used to modify stores.

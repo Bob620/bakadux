@@ -1,6 +1,6 @@
 {
   "name": "bakadux",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A dispatcher setup simular to Flux or Redux for React",
   "main": "dispatcher.js",
   "scripts": {
@@ -27,15 +27,16 @@
     "react-dom": "^16.4.1"
   },
   "devDependencies": {
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "babel": "^6.23.0",
-    "@babel/core": "^7.0.0-beta.53",
+    "@babel/core": "^7.0.0-beta.54",
     "@babel/preset-env": "^7.0.0-beta.53",
     "@babel/preset-react": "^7.0.0-beta.53",
+    "babel": "^6.23.0",
     "babel-loader": "^8.0.0-beta.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
     "webpack": "^4.6.0",
     "webpack-cli": "^2.0.14",
     "webpack-serve": "^0.3.1"
-  }
+  },
+  "dependencies": {}
 }

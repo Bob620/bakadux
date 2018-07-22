@@ -81,9 +81,10 @@ class Dispatcher {
 	/**
 	 * Main function used to render react
 	 */
-	render(UserClass) {
+	render(UserClass, elementId = '') {
 		const that = this;
 
+		if (elementId !== '') this.data.renderLocationId = elementId;
 		this.data.onLandFunc();
 
 		// Creates a class that the dispatcher can actually set the state and update it and whatnot
@@ -104,10 +105,6 @@ class Dispatcher {
 		}
 
 		ReactDOM.render(<MainClass />, document.getElementById(this.data.renderLocationId));
-	}
-
-	setRenderLocationId(elementId) {
-		this.data.renderLocationId = elementId;
 	}
 
 	/**
