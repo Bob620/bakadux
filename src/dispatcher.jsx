@@ -28,7 +28,7 @@ class Dispatcher {
 						stores: this.data.storeModify,
 						actions: this.data.actionCalls,
 						history: this.history
-					}, values);
+					}, ...values);
 					this.updateStores();
 				};
 
