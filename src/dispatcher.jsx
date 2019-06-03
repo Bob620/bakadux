@@ -142,7 +142,8 @@ class Dispatcher {
 		this.data.stores.set(storeType, store);
 		this.data.storeModify[storeType] = {
 			set: store.data.set.bind(store),
-			get: store.get.bind(store)
+			get: store.get.bind(store),
+			getKeys: store.getKeys.bind(store)
 		};
 	}
 

@@ -33,4 +33,8 @@ module.exports = class Store {
 	get(key) {
 		return this.data.storage[key];
 	}
+
+	getKeys() {
+		return Object.keys(this.data.storage);
+	}
 };

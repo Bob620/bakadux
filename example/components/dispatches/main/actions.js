@@ -1,10 +1,12 @@
 import { CreateActions } from '../../../../dispatcher.js';
 
-module.exports = CreateActions([
+export default CreateActions([
 	{
 		actionType: 'togglePage',
 		func: ({stores, history}) => {
 			const mainStore = stores.main;
+
+			console.log(mainStore.getKeys());
 
 			// Changes the page
 			if (mainStore.get('page') === "Kappa") {
