@@ -1,13 +1,11 @@
 {
   "name": "bakadux",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A dispatcher setup similar to Flux or Redux for React",
   "main": "dispatcher.js",
   "scripts": {
     "start": "webpack-serve",
-    "build": "webpack --config webpack.build.js",
-    "preinstall": "npm prune",
-    "postinstall": ""
+    "build": "webpack --config webpack.build.js"
   },
   "repository": {
     "type": "git",
@@ -27,15 +25,14 @@
     "react-dom": "^16.4.1"
   },
   "devDependencies": {
-    "@babel/core": "7.0.0-beta.54",
-    "@babel/preset-env": "7.0.0-beta.53",
-    "@babel/preset-react": "7.0.0-beta.53",
-    "babel-loader": "8.0.0-beta.2",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@babel/preset-react": "^7.12.13",
+    "babel-loader": "^8.2.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "webpack": "4.6.0",
-    "webpack-cli": "2.0.14",
-    "webpack-serve": "0.3.1"
-  },
-  "dependencies": {}
+    "webpack": "4.46.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-serve": "0.3.2"
+  }
 }
